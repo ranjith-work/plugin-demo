@@ -229,7 +229,7 @@ function ReactCollectFeedbackDemo() {
 	};
 
 	return (
-		<div className="feedback-container">
+		<div className="demo-container">
 			<div className="grid-container">
 				<div className="feedback-styles">
 					<h3>Select a feedback type</h3>

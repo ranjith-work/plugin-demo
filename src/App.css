@@ -3,6 +3,11 @@ body {
 	background-color: rgb(235, 235, 235);
 	max-height: 100vh !important;
 	overflow-y: hidden;
+	font-size: 14px;
+}
+
+.demo-header {
+	background-color: white;
 }
 
 .center-screen {
@@ -10,6 +15,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+}
+
+a {
+	text-decoration: none;
 }
 
 .feedback-styles li {
@@ -20,9 +29,9 @@ body {
 	font-weight: bold;
 }
 
-.feedback-container {
+.demo-container {
 	display: flex;
-	max-height: 100vh !important;
+	height: 100vh !important;
 }
 
 .grid-container {
@@ -84,4 +93,198 @@ h3 {
 
 .widget-display-item {
 	padding-bottom: 5em;
+}
+
+.button-default {
+	appearance: none;
+	background-color: #fafbfc;
+	border: 1px solid rgba(27, 31, 35, 0.15);
+	border-radius: 6px;
+	box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+		rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+	box-sizing: border-box;
+	color: #24292e;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	list-style: none;
+	padding: 6px 16px;
+	position: relative;
+	transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	word-wrap: break-word;
+}
+
+.left-column,
+.right-column {
+	width: 45%;
+	padding: 2em;
+}
+
+.left-column {
+	padding-right: 4em !important;
+}
+
+.left-column {
+	width: 40%;
+	background-color: #f5f5f5;
+}
+
+.left-column h2,
+.right-column h2 {
+	margin-bottom: 10px;
+}
+
+.left-column label {
+	display: block;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 15px !important;
+	margin-top: 5px;
+	font-family: "Lato", system-ui !important;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+	outline: none;
+}
+
+textarea {
+	height: 60px;
+	border-radius: 15px !important;
+	height: 50px;
+	resize: none;
+}
+
+.radio-group {
+	display: flex;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.right-column pre {
+	background-color: #f4f4f4;
+	padding: 2em;
+	border: 1px solid #ddd;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	border-radius: 15px;
+}
+
+.button-action {
+	appearance: none;
+	background-color: #2ea44f;
+	border: 1px solid rgba(27, 31, 35, 0.15);
+	border-radius: 15px;
+	box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 20px;
+	padding: 6px 16px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-family: "Lato", system-ui !important;
+}
+
+.plugin-links {
+	margin-top: 30px;
+	font-size: 14px;
+	color: #333;
+}
+
+.plugin-links p {
+	margin-bottom: 8px;
+}
+
+.plugin-links a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.plugin-links a:hover {
+	text-decoration: underline;
+}
+
+.rwn-input-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px; /* Adjust as necessary */
+}
+
+.left,
+.right {
+	flex: 1;
+}
+
+.left label,
+.right label {
+	display: flex;
+	flex-direction: column;
+}
+
+.rwn-input-row .left {
+	padding-right: 2em;
+}
+
+.button-group {
+	border: none !important;
+	padding: 0em !important;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+.button-group button {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 5px 15px;
+	cursor: pointer;
+	flex: 1;
+	outline: none;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	font-family: "Lato", system-ui !important;
+}
+
+.button-group button.active {
+	background-color: #dee7ff;
+	border-color: #0043ed;
+	color: #0043ed;
+}
+
+.button-group button:first-child {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.button-group button:last-child {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
