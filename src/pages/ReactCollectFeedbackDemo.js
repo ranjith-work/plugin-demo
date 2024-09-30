@@ -228,63 +228,109 @@ function ReactCollectFeedbackDemo() {
 		setSelectedFeedbackProps(props);
 	};
 
+	const generateCodeSnippet = () => {
+		return JSON.stringify(selectedFeedbackProps, null, 2);
+	};
+
+	const handleCopyCode = () => {
+		const code = generateCodeSnippet();
+		navigator.clipboard
+			.writeText(code)
+			.then(() => {
+				alert("Code copied to clipboard!");
+			})
+			.catch((err) => {
+				console.error("Failed to copy: ", err);
+			});
+	};
+
 	return (
-		<div className="demo-container">
-			<div className="grid-container">
-				<div className="feedback-styles">
-					<h3>Select a feedback type</h3>
-					<ol>
-						<li
-							onClick={() => {
-								clickFeedback(pageFeedbackProps);
-							}}>
-							<FeedbackWidget {...pageFeedbackProps} />
-						</li>
-						<li
-							onClick={() => {
-								clickFeedback(productFeedbackProps);
-							}}>
-							<FeedbackWidget {...productFeedbackProps} />
-						</li>
-						<li
-							onClick={() => {
-								clickFeedback(ratingFeedbackProps);
-							}}>
-							<FeedbackWidget {...ratingFeedbackProps} />
-						</li>
-						<li
-							onClick={() => {
-								clickFeedback(scoreFeedbackProps);
-							}}>
-							<FeedbackWidget {...scoreFeedbackProps} />
-						</li>
-					</ol>
+		<>
+			<div className="layout">
+				<div className="left-content">
+					<div>
+						<h1>React Collect Feedback</h1>
+					</div>
 				</div>
-				<div className="footer-notes">
-					<div>
-						React Collect Feedback Plugin:{" "}
-						<a href="https://www.npmjs.com/package/react-collect-feedback">
-							https://www.npmjs.com/package/react-collect-feedback
-						</a>
-					</div>
-					<div>
-						Checkout other work at:{" "}
-						<a href="https://ranjith.work">https://ranjith.work</a>
-					</div>
+				<div className="right-content">
+					<a
+						href="https://www.npmjs.com/package/react-collect-feedback"
+						className="npm-logo">
+						<img src="npm-logo-red.png" alt="NPM Link" />
+					</a>
+
+					<a
+						href="https://ranjith-work.github.io/plugin-demo"
+						className="all-plugins">
+						All Plugins
+					</a>
 				</div>
 			</div>
 
-			<div className="widget-display">
-				{selectedFeedbackProps ? (
-					<div className="widget-display-item">
-						<h3>{selectedFeedbackProps.promptText} Props</h3>
-						<pre>{JSON.stringify(selectedFeedbackProps, null, 2)}</pre>{" "}
+			<div className="demo-container">
+				<div className="grid-container">
+					<div className="feedback-styles">
+						<h3>Select a feedback type</h3>
+						<ol>
+							<li
+								onClick={() => {
+									clickFeedback(pageFeedbackProps);
+								}}>
+								<FeedbackWidget {...pageFeedbackProps} />
+							</li>
+							<li
+								onClick={() => {
+									clickFeedback(productFeedbackProps);
+								}}>
+								<FeedbackWidget {...productFeedbackProps} />
+							</li>
+							<li
+								onClick={() => {
+									clickFeedback(ratingFeedbackProps);
+								}}>
+								<FeedbackWidget {...ratingFeedbackProps} />
+							</li>
+							<li
+								onClick={() => {
+									clickFeedback(scoreFeedbackProps);
+								}}>
+								<FeedbackWidget {...scoreFeedbackProps} />
+							</li>
+						</ol>
 					</div>
-				) : (
-					<p>Please select a feedback type to see its props.</p>
-				)}
+					<div className="footer-notes">
+						<div>
+							React Collect Feedback Plugin:{" "}
+							<a href="https://www.npmjs.com/package/react-collect-feedback">
+								https://www.npmjs.com/package/react-collect-feedback
+							</a>
+						</div>
+						<div>
+							Checkout other work at:{" "}
+							<a href="https://ranjith.work">https://ranjith.work</a>
+						</div>
+					</div>
+				</div>
+
+				<div className="widget-display">
+					{selectedFeedbackProps ? (
+						<div className="widget-display-item">
+							<h3>{selectedFeedbackProps.promptText} Props</h3>
+							<div className="code-container">
+								<pre>
+									<code>{generateCodeSnippet()}</code>
+								</pre>
+								<button className="copy-icon" onClick={handleCopyCode}>
+									Copy code
+								</button>
+							</div>
+						</div>
+					) : (
+						<p>Please select a feedback type to see its props.</p>
+					)}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
