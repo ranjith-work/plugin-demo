@@ -199,17 +199,21 @@ webNotify({
 
 				<div className="right-column">
 					<h3>Props</h3>
-					<div className="code-container">
-						<pre>
-							<code>{generateCodeSnippet()}</code>
-						</pre>
-						<button className="copy-icon" onClick={handleCopyCode}>
-							Copy code
+					<div>
+						<div className="code-container">
+							<pre>
+								<code>{generateCodeSnippet()}</code>
+							</pre>
+							<button className="copy-icon" onClick={handleCopyCode}>
+								Copy code
+							</button>
+						</div>
+					</div>
+					<div>
+						<button className="button-action" onClick={handleShowNotification}>
+							Show Notification
 						</button>
 					</div>
-					<button className="button-action" onClick={handleShowNotification}>
-						Show Notification
-					</button>
 				</div>
 			</div>
 		</>
